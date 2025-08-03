@@ -1,0 +1,137 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1{
+    color:white;
+    margin-top: 10px;
+
+}
+
+#gallery {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(to bottom right, pink, white , pink);
+}
+
+/* Left section  overlapping images */
+#parent {
+  flex: 1;
+  position: relative;
+  padding: 20px;
+}
+
+/* Right section img5 and img4 */
+#right-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;  
+  align-items: center;      
+  justify-content: center;  
+  gap: 20px;                
+  padding: 20px;
+  
+}
+
+img {
+  transform: rotate(10deg);
+  transition: transform 2s;
+}
+
+/* Overlapping images with absolute positions */
+#img1, #img2, #img3 {
+  position: absolute;
+  margin-top: 30px;
+}
+
+#img1 { left: 20px; }
+#img2 { left: 90px; }
+#img3 { left: 160px; }
+
+
+#img1:hover, #img2:hover, #img3:hover {
+  z-index: 2;
+  transform: rotate(0deg);
+  border-radius: 20px;
+  border: 2px solid white;
+}
+
+/* Image on right side */
+#img5, #img4{
+  transform: none;
+  border-radius: 20px;
+  transition: 0.5s;
+  border: 3px solid white;
+
+}
+
+#img5:hover, #img4:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+#img5{
+    left:200px;
+}
+figure {
+  text-align: center;
+}
+
+figcaption {
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  background: conic-gradient(from 90deg at 50% 50%, red, orange, yellow, green, blue, indigo, violet, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+#highlights {
+  padding: 40px;
+  background-color: pink;
+  text-align: center;
+  background: conic-gradient(from 90deg at 50% 50%, white, pink,white, pink)
+}
+
+#highlights h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: black;
+  text-shadow: 2px 2px violet;
+  
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr ));
+  gap: 20px;
+  justify-items: center;
+}
+
+.highlight-box {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.highlight-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.highlight-box:hover {
+  transform: scale(1.8);
+}
+.highlight-box img {
+  transform: none !important;
+}
+
